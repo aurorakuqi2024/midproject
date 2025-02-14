@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: repo-migration-pod
+spec:
+  containers:
+    - name: repo-migration
+      image: repo-migration
+      imagePullPolicy: Never
+      command: ["/bin/bash", "/mirror-repo.sh", "https://github.com/fmetaj/hello-from-gh", "https://github.com/fmetaj/Bitbucket"]
+  restartPolicy: Never
